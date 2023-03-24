@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transcription</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      .transcription {
+        margin: auto;
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      .original {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .translation {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transcription</h1>
+    <div class="transcription">
+      <p class="original"><strong>Original Text:</strong> {{ transcription['original_text']['text'] }}</p>
+      <p class="translation"><strong>Translation:</strong> {{ transcription['translation'] }}</p>
+    </div>
+  </body>
+</html>
