@@ -21,6 +21,12 @@ Once you have cloned the repository, navigate to the project directory:
 ```
 $ cd LUNA-Transcript
 ```
+The uploads directory is where the uploaded audio files will be saved. You can specify the location of this directory by setting the UPLOAD_FOLDER configuration variable in the Flask app. In the provided code, the UPLOAD_FOLDER is set to uploads/, but you can modify this to suit your needs.
+
+The models directory is where the whisper models are stored. The load_model function in the code expects to find the models in this directory. You'll need to download the appropriate whisper model for your use case and save it in this directory.
+
+Once you've created these directories, you should be ready to run the code.
+
 ### Available models and languages
 ***
 This application uses the Whisper library to perform speech-to-text transcription. Whisper provides a range of pre-trained models with varying sizes and capabilities, including English-only and multilingual models. The following table lists the available models and their corresponding sizes, parameters, and resource requirements:
