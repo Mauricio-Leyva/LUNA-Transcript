@@ -15,7 +15,7 @@ Before running LUNA Transcript, make sure you have the following installed:
 ***
 To get started, clone this repository:
 ```
-$ git clone https://github.com/your_username/LUNA-Transcript.git
+$ git clone https://github.com/Mauricio-Leyva/LUNA-Transcript.git
 ```
 Once you have cloned the repository, navigate to the project directory:
 ```
