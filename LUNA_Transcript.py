@@ -27,7 +27,7 @@ def allowed_file(filename: str) -> bool:
 # Transcribe MP3 file
 def transcribe_mp3(file_path: str) -> Dict[str, str]:
     try:
-        model = whisper.load_model("small", download_root="your own path here")
+        model = whisper.load_model("small", download_root="./model")
     except Exception as e:
         return {'error': str(e)}
 
@@ -35,6 +35,7 @@ def transcribe_mp3(file_path: str) -> Dict[str, str]:
     translation = model.transcribe(file_path, task="translate", verbose=True)
     del model
     return {'original_text': result, 'translation': translation}
+
 
 # Route for uploading MP3 file and transcribing it
 @app.route('/transcribe', methods=['POST'])
@@ -54,6 +55,8 @@ def upload_file():
             transcription = transcribe_mp3(file_path)
             if 'error' in transcription:
                 return {'error': transcription['error']}
+            # Delete the uploaded file
+            os.remove(file_path)
             return render_template('transcription.html', transcription=transcription)
 
 # Run the app

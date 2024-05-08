@@ -1,46 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Transcription</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriptions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 30px;
-      }
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-      .transcription {
-        margin: auto;
-        width: 50%;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 0 5px #ddd;
-      }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: left;
+            max-width: 1000px;
+            width: 100%;
+        }
 
-      .original {
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeInDown 1s;
+        }
 
-      .translation {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-      }
+        .transcription-boxes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .transcription {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s;
+            width: 49%;
+            box-sizing: border-box;
+            height: 500px; 
+            overflow-y: auto; 
+        }
+
+        @media (max-width: 768px) {
+            .transcription {
+                width: 100%;
+                height: 300px; 
+            }
+        }
+
+        .original {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .translation {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .back-button {
+            display: block;
+            margin: 30px auto 0;
+            background-color: #764ba2;
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s;
+        }
+
+        .back-button:hover {
+            background-color: #5c3d81;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Transcription</h1>
-    <div class="transcription">
-      <p class="original"><strong>Original Text:</strong> {{ transcription['original_text']['text'] }}</p>
-      <p class="translation"><strong>Translation:</strong> {{ transcription['translation'] }}</p>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animate__animated">Transcription</h1>
+        <div class="transcription-boxes">
+            <div class="transcription animate__animated">
+                <p class="original"><strong>Original Text:</strong> {{ transcription['original_text']['text'] }}</p>
+            </div>
+            <div class="transcription animate__animated">
+                <p class="translation"><strong>Translation:</strong> {{ transcription['translation']['text'] }}</p>
+            </div>
+        </div>
+        <a href="/" class="back-button">Home</a>
     </div>
-  </body>
+</body>
 </html>
