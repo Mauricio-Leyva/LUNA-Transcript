@@ -38,6 +38,7 @@ This application uses the Whisper library to perform speech-to-text transcriptio
 | small  | 244 M      | small.en           | small              | ~2 GB         | ~6x            |
 | medium | 769 M      | medium.en          | medium             | ~5 GB         | ~2x            |
 | large  | 1550 M     | N/A                | large              | ~10 GB        | 1x             |
+| turbo  | 809 M     | N/A                | turbo              | ~6 GB        | ~8x             |
 
 By default, this application uses the small model. To use a different model, modify the model = whisper.load_model("small", download_root="your own path here") line in LUNA_Transcript.py to specify the desired model.
 
